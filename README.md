@@ -17,13 +17,19 @@
 5. Putty
 ```
 
+## 1. DBeaver Tool 
+```
+DBeaver is a SQL client software application and a database administration tool. For relational databases it
+uses the JDBC application programming interface to interact with databases via a JDBC driver. For other
+databases it uses proprietary database drivers.
+```
+
 ## TDMS RailServer:
 ```
-DBeaver is a SQL client software application and a
-database administration tool. For relational databases it
-uses the JDBC application programming interface to
-interact with databases via a JDBC driver. For other
-databases it uses proprietary database drivers.
+TDMS (Track Data Management System) RailServer is a specialized system used in the railway industry to manage, analyze, 
+and store data related to railway track maintenance and operations. It is often used by rail operators and engineers 
+for track condition monitoring, defect analysis, and planning maintenance activities to ensure the safety and efficiency 
+of railway operations.
 ```
 
 <hr>
