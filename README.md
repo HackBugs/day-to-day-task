@@ -4,16 +4,27 @@
 > EnterpriseDB (EDB Advanced Server) Installation
 
 ## PostgreSQL database
+```
 1. pgAdmin - PostgreSQL Tools
+```
 
 ## Tools
-1. DBeaver Tool
+```
+1. DBeaver Tool 
 2. WinSCP
 3. MobaXterm 
 4. FileZilla
 5. Putty
+```
 
-## TDMS RailServer: 
+## TDMS RailServer:
+```
+DBeaver is a SQL client software application and a
+database administration tool. For relational databases it
+uses the JDBC application programming interface to
+interact with databases via a JDBC driver. For other
+databases it uses proprietary database drivers.
+```
 
 <hr>
 
