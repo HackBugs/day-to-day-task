@@ -34,6 +34,10 @@ sudo /usr/pgadmin4/bin/setup-web.sh
 
 <hr>
 
+```
+sudo systemctl status pgadmin4
+```
+
 ## 1. pgAdmin 4 ko open karne ke liye terminal mein simply type karen:
 
 ```
