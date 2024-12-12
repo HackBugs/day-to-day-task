@@ -34,6 +34,37 @@ of railway operations.
 
 <hr>
 
+## **EDB Subscription Software** 
+
+---
+ 
+- EDB Backup and Recovery Tool  
+- EDB Failover Manager  
+- EDB LDAP Sync  
+- EDB LiveCompare  
+- EDB Migration Toolkit  
+- EDB Postgres Enterprise Manager  
+- EDB Postgres Extended Server  
+- EDB Postgres for Kubernetes Operator  
+- EDB Replication Server  
+- EDB Postgres Advanced Server  
+- Postgres Advanced Server Container Image  
+- EDB PgBouncer  
+- EDB Pgpool  
+- EDB Language Pack  
+- EDB Slony  
+- EDB*Plus  
+- EDB .net Connector  
+- EDB JDBC Connector  
+- EDB ODBC Connector  
+- EDB Postgres Workload Reports (PWR)  
+- EDB OCL Connector  
+- EDB StackBuilder Plus  
+- EDB Postgres Distributed  
+- EDB High Availability Routing for Postgres  
+
+<hr>
+
 > **JBoss (WildFly)** aur **TIBCO** dono hi enterprise software platforms hain, lekin inka kaam aur use case alag hai. Dono ke beech ka **antar** inke purpose, architecture, aur applications ke base par samjha ja sakta hai. Chaliye, dono ko detail mein compare karte hain:  
 
 ---
