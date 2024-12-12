@@ -56,6 +56,11 @@ sudo /usr/pgadmin4/bin/setup-web.sh
 http://127.0.0.1/pgadmin4
 ```
 
+- Example
+```
+http://192.168.1.72/pgadmin4/login?next=/pgadmin4/browser/
+```
+
 ```
 http://localhost/pgadmin4
 ```
