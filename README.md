@@ -2,6 +2,7 @@
 
 ## EDB database
 > EnterpriseDB (EDB Advanced Server) Installation
+[EDB database](https://www.enterprisedb.com/)
 
 ## PostgreSQL database
 ```
