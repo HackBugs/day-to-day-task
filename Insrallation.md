@@ -1,5 +1,5 @@
 
-## **Install pgAdmin** - [Insrallation link](https://www.pgadmin.org/download/pgadmin-4-apt/)
+## 1. **Install pgAdmin** - [Insrallation link](https://www.pgadmin.org/download/pgadmin-4-apt/)
 
 1. Create file - 1.sh
 2. Paste this code
@@ -38,19 +38,19 @@ sudo /usr/pgadmin4/bin/setup-web.sh
 sudo systemctl status pgadmin4
 ```
 
-## 1. pgAdmin 4 ko open karne ke liye terminal mein simply type karen:
+### 1. pgAdmin 4 ko open karne ke liye terminal mein simply type karen:
 
 ```
 pgadmin4
 ```
 
-## 2. Agar aapne web mode install kiya hai, toh aapko pehle web server ko configure karna hoga. Aapne jo command run ki thi:
+### 2. Agar aapne web mode install kiya hai, toh aapko pehle web server ko configure karna hoga. Aapne jo command run ki thi:
 
 ```
 sudo /usr/pgadmin4/bin/setup-web.sh
 ```
 
-## 3. Setup ke baad, aap pgAdmin ko web browser ke through access kar sakte hain. Aapko browser mein yeh URL type karna hoga:
+### 3. Setup ke baad, aap pgAdmin ko web browser ke through access kar sakte hain. Aapko browser mein yeh URL type karna hoga:
 
 ```
 http://127.0.0.1/pgadmin4
@@ -67,7 +67,7 @@ http://localhost/pgadmin4
 
 <hr>
 
-> ## Step-by-Step Process: PostgreSQL Database Install Karna
+> ### Step-by-Step Process: PostgreSQL Database Install Karna
 
 1. **System ko Update Karna:**
    Sabse pehle apne system ke package list ko update karein:
@@ -146,4 +146,8 @@ Aapne jo **pgAdmin 4** install kiya hai, usse aap apne PostgreSQL server ko mana
 - Aapko **PostgreSQL database server** alag se install karna padega (jo maine upar step-by-step bataya hai).
 - Jab PostgreSQL server install ho jayega, tab aap usse pgAdmin ya `psql` command line tool se manage kar sakte hain.
 
-Ab aap apne PostgreSQL server ko use karne ke liye ready hain!
+<hr>
+
+## 2. **REHL Minimal Install Without GUI**
+
+
