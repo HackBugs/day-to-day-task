@@ -67,6 +67,11 @@ http://localhost/pgadmin4
 
 <hr>
 
+[Install - pgAdmin in REHL](https://www.tecmint.com/install-postgresql-and-pgadmin-in-rhel-8/)
+
+
+<hr>
+
 > ### Step-by-Step Process: PostgreSQL Database Install Karna
 
 1. **System ko Update Karna:**
