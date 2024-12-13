@@ -1,5 +1,5 @@
 
-## 1. **Install pgAdmin** - [Insrallation link](https://www.pgadmin.org/download/pgadmin-4-apt/)
+# 1. **Install pgAdmin** - [Insrallation link](https://www.pgadmin.org/download/pgadmin-4-apt/)
 
 1. Create file - 1.sh
 2. Paste this code
@@ -67,8 +67,116 @@ http://localhost/pgadmin4
 
 <hr>
 
+# Insatll karne ka baad ye cmd use kare aur jo email id and password use kiye hai webiste pe o enter kare fir aap koe pkg install kar kakte hai `dnf` cmd se
+
 [Install - pgAdmin in REHL](https://www.tecmint.com/install-postgresql-and-pgadmin-in-rhel-8/)
 
+Aapko jo errors mil rahe hain unka matlab hai ki **python3-devel**, **libxml2-devel**, aur **libxslt-devel** packages aapke system ke repository mein nahi mil rahe hain. Yeh typically tab hota hai jab **Red Hat subscription** active nahi hota ya **Red Hat repositories** properly configure nahi hoti.
+
+Is issue ko solve karne ke liye, aapko kuch steps follow karne honge:
+
+### Step 1: **Register Your System with Red Hat Subscription**
+
+Sabse pehle, aapko apne system ko Red Hat subscription ke saath register karna hoga, jisse Red Hat ke official repositories aapke system pe available ho sakein.
+
+```bash
+sudo subscription-manager register
+```
+
+Is command ke through aapko apna **Red Hat account** aur **subscription key** dena hoga. Agar aapke paas Red Hat subscription nahi hai, to aap **Developer Subscription** use kar sakte hain, jo free hai.
+
+Agar aap already registered hain, to subscription ko attach karne ke liye yeh command use karein:
+
+```bash
+sudo subscription-manager attach --auto
+```
+
+### Step 2: **Enable Required Repositories**
+
+Red Hat ke repositories ko enable karna hoga taaki aapko required packages mil sakein. Sabse pehle **AppStream** aur **BaseOS** repositories ko enable karein:
+
+```bash
+sudo subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
+sudo subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+sudo subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
+```
+
+### Step 3: **Install Missing Dependencies**
+
+Ab, jab Red Hat ke repositories enable ho gaye hain, aap easily missing packages ko install kar sakte hain. Phir se dependencies install karne ki koshish karein:
+
+```bash
+sudo dnf install python3-devel libxml2-devel libxslt-devel -y
+```
+
+Is step se **python3-devel**, **libxml2-devel**, aur **libxslt-devel** packages install ho jaayenge.
+
+### Step 4: **Install pgAdmin**
+
+Agar dependencies successfully install ho gayi hain, to aap **pgAdmin** ko install kar sakte hain using the steps mentioned earlier.
+
+1. **pgAdmin repository add karein** (agar abhi tak nahi kiya):
+
+```bash
+sudo nano /etc/yum.repos.d/pgadmin.repo
+```
+
+Add the following content:
+
+```bash
+[pgAdmin]
+name=pgAdmin Repository
+baseurl=https://yum.postgresql.org/pgadmin4/rhel/8/x86_64/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.postgresql.org/RPM-GPG-KEY-PGDG
+```
+
+2. **pgAdmin install karein**:
+
+```bash
+sudo dnf install pgadmin4 -y
+```
+
+### Step 5: **Start pgAdmin**
+
+1. **Desktop mode (GUI)**:
+
+```bash
+pgadmin4
+```
+
+2. **Web mode**:
+
+```bash
+sudo systemctl enable pgadmin4
+sudo systemctl start pgadmin4
+```
+
+Ab aap pgAdmin ko **http://<your-server-ip>/pgadmin4** pe access kar sakte hain.
+
+---
+
+### Agar Subscription Manager ka Use Nahi Kar Rahe
+
+Agar aapke paas Red Hat subscription nahi hai, ya aapko **subscription-manager** ka use nahi karna chahte, to aap **EPEL (Extra Packages for Enterprise Linux)** repository ko enable kar sakte hain, jo additional packages provide karta hai. Yeh steps follow karein:
+
+1. **EPEL repository ko enable karein**:
+
+```bash
+sudo dnf install epel-release -y
+```
+
+2. **Missing dependencies ko install karein**:
+
+```bash
+sudo dnf install python3-devel libxml2-devel libxslt-devel -y
+```
+
+---
+
+### Conclusion:
+Agar aapke paas valid **Red Hat subscription** hai, to sabse pehle system ko register karen aur required repositories enable karein. Agar aapke paas subscription nahi hai, to EPEL repository se missing dependencies install karne ki koshish karein. Uske baad, pgAdmin ko install kar sakte hain.
 
 <hr>
 
@@ -153,6 +261,6 @@ Aapne jo **pgAdmin 4** install kiya hai, usse aap apne PostgreSQL server ko mana
 
 <hr>
 
-## 2. **REHL Minimal Install Without GUI**
+# 2. **REHL Minimal Install Without GUI**
 
 
