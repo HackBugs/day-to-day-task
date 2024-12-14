@@ -1,4 +1,6 @@
 
+- [Queries PostgresSQL And about EDB](https://github.com/HackBugs/PostgreSQL-EDB-firewall-cmd.md/blob/main/EDB%20-%20Oracle%20aur%20PostgreSQL%20ke%20queries.md)
+
 > ## CMD Check where have BIN file of PostgrecsSQL - `which psql` also can use `where psql`
 
 ## After installation use these cmd to desc database and alter view table details
