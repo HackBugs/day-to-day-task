@@ -1,8 +1,14 @@
 
 1. Use this link and select the version and all and after use this 1.sh paste in this file all code for installation script run in one click
-2. sudo su - postgres
-3. psql
-4. \l This is "l" for lion not "1" 
+2. sudo su - postgres psql
+3. sudo -u postgres psql
+
+4. create databse "your databse name";
+5. ALTER USER postgres WITH PASSWORD 'admin@123';
+6. create USER "yourname" WITH PASSWORD 'admin@123';
+
+7. \l - check database
+8. \du - Check user
 
 - [Download](https://www.postgresql.org/)
 - [Download-2](https://www.postgresql.org/download/linux/redhat/)
