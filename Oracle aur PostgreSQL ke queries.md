@@ -81,4 +81,186 @@
 | **pg_wal/**           | `$PGDATA/pg_wal/`                       | Write-Ahead Log (WAL) files ka directory.                                            |
 | **log_directory**     | Defined in `postgresql.conf`            | Server logs ka directory.                                                            |
 
+<hr>
+
+> ## Aapne EDB (EnterpriseDB) Postgres ke alag-alag tools ka mention kiya hai, jo PostgreSQL ke advanced functionalities aur enterprise-grade features provide karte hain. Main in sab tools ka ek overview de raha hoon, aur kaise unhe use karte hain ye explain karunga. Sab kuch easy aur step-by-step samajhne ke liye:
+
+---
+
+### **1. EDB Backup and Recovery Tool (BART)**
+- **Purpose:** PostgreSQL database ka backup aur recovery manage karne ke liye.
+- **Installation Path:** Linux systems me `/opt/edb/backup_and_recovery` me hota hai.
+- **How to Use:**  
+  - BART ka configuration file edit karein:
+    ```bash
+    vi /etc/bart.cfg
+    ```
+  - Backup lene ke liye:
+    ```bash
+    bart backup --backup-name <backup_name>
+    ```
+  - Recovery ke liye:
+    ```bash
+    bart restore --backup-name <backup_name>
+    ```
+
+---
+
+### **2. EDB Failover Manager (EFM)**
+- **Purpose:** High availability ke liye master/slave failover automation.
+- **How to Use:**
+  - Configuration file set karein (`efm.properties`).
+  - Cluster initialize karein:
+    ```bash
+    efm cluster-init
+    ```
+  - Failover manager start karein:
+    ```bash
+    efm start-cluster
+    ```
+
+---
+
+### **3. EDB LDAP Sync**
+- **Purpose:** LDAP directory ke saath PostgreSQL ke users ko synchronize karna.
+- **How to Use:**
+  - Configuration file edit karein (`ldap-sync.yml`).
+  - Sync karne ke liye:
+    ```bash
+    edb-ldap-sync --config ldap-sync.yml
+    ```
+
+---
+
+### **4. EDB LiveCompare**
+- **Purpose:** PostgreSQL databases me differences ko compare karna.
+- **How to Use:**
+  - Command line me LiveCompare ko execute karein:
+    ```bash
+    livecompare --source-db <source> --target-db <target>
+    ```
+
+---
+
+### **5. EDB Migration Toolkit**
+- **Purpose:** Other databases (Oracle, MySQL) se PostgreSQL me migrate karna.
+- **How to Use:**
+  - Migration toolkit ko run karein:
+    ```bash
+    migration-toolkit.sh --source <source_db> --target <postgres_db>
+    ```
+
+---
+
+### **6. EDB Postgres Enterprise Manager (PEM)**
+- **Purpose:** Monitoring aur management ke liye GUI tool.
+- **How to Use:**
+  - Web interface ke through access karein:  
+    `http://<your_server>:8443/pem`  
+  - Login aur metrics monitor karein.
+
+---
+
+### **7. EDB Postgres for Kubernetes Operator**
+- **Purpose:** Kubernetes me PostgreSQL clusters deploy karne ke liye.
+- **How to Use:**
+  - Helm chart use karein Kubernetes cluster me deploy karne ke liye:
+    ```bash
+    helm install edb-operator edb-helm-chart
+    ```
+
+---
+
+### **8. EDB Replication Server**
+- **Purpose:** Data replication setup karna (multi-master or single-master).
+- **How to Use:**
+  - Configuration file (`replication-config.xml`) setup karein.
+  - Replication start karein:
+    ```bash
+    edb-replication-server start
+    ```
+
+---
+
+### **9. EDB Postgres Advanced Server**
+- **Purpose:** Enterprise-grade PostgreSQL features.
+- **How to Use:**
+  - Normal PostgreSQL jaise use karein, lekin extra features jese:
+    - Advanced partitioning
+    - Oracle compatibility
+
+---
+
+### **10. EDB PgBouncer**
+- **Purpose:** Lightweight connection pooler.
+- **How to Use:**
+  - `pgbouncer.ini` file configure karein.
+  - Start karne ke liye:
+    ```bash
+    pgbouncer -d pgbouncer.ini
+    ```
+
+---
+
+### **11. EDB Pgpool-II**
+- **Purpose:** Load balancing aur connection pooling.
+- **How to Use:**
+  - Config file (`pgpool.conf`) setup karein.
+  - Start Pgpool:
+    ```bash
+    pgpool -n
+    ```
+
+---
+
+### **12. EDB Language Pack**
+- **Purpose:** PostgreSQL ke liye additional programming languages jese Python, Perl.
+- **How to Use:**
+  - Language pack install karne ke baad, database me language enable karein:
+    ```sql
+    CREATE EXTENSION plpython3u;
+    ```
+
+---
+
+### **13. EDB StackBuilder Plus**
+- **Purpose:** Add-ons aur extensions ko install karna.
+- **How to Use:**
+  - GUI launch karein aur extensions select karein.
+
+---
+
+### **14. EDB High Availability Routing (HARP)**
+- **Purpose:** Automatic routing ke liye failover aur load balancing.
+- **How to Use:**
+  - HARP ko `harp.conf` ke through configure karein.
+  - Start routing manager:
+    ```bash
+    harp --config harp.conf
+    ```
+
+---
+
+### **15. Backup Types in PostgreSQL**
+1. **Full Backup:**  
+   ```bash
+   pg_basebackup -D /backup -Fp -Xs -v -P
+   ```
+2. **Incremental Backup:**  
+   PostgreSQL native incremental backup ka feature nahi hai, lekin WAL archiving ke through ho sakta hai:
+   ```bash
+   archive_command = 'cp %p /archive/%f'
+   ```
+
+3. **Logical Backup:**  
+   ```bash
+   pg_dump mydb > mydb.sql
+   ```
+
+4. **Physical Backup:**  
+   Data directory ka direct backup:
+   ```bash
+   rsync -a /var/lib/postgresql/<version>/main /backup/
+   ```
+
 ---
