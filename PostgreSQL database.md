@@ -1,3 +1,6 @@
+
+> ## CMD Check where have BIN file of PostgrecsSQL - `which psql` also can use `where psql`
+
 ## After installation use these cmd to desc database and alter view table details
 
 1. Use this link and select the version and all and after use this 1.sh paste in this file all code for installation script run in one click
