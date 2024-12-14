@@ -460,4 +460,113 @@
 ### **24. EDB High Availability Routing for Postgres**  
 - **Use:** Automatic failover aur high-availability routing ke liye.
 
+<hr>
+
+> ## Agar aap **EDB Postgres** ke tools ki baat kar rahe hain, toh **EnterpriseDB (EDB)** ke paas PostgreSQL ke liye kaafi powerful tools aur utilities hain jo aapko **database management**, **migration**, **replication**, **backup and recovery**, **monitoring**, **high availability**, aur **security** mein madad karte hain. In tools ko aap **commercial** aur **non-commercial** purposes ke liye use kar sakte hain, depending on the license.
+
+### **Top EDB Tools for PostgreSQL:**
+
+1. **EDB Postgres Advanced Server**:
+   - **PostgreSQL ka extended version** hai jisme Oracle compatibility features bhi hote hain, jaise PL/SQL, Oracle-specific data types, aur tools.
+   - **Enterprise features** jaise performance tuning, security, scalability, etc., bhi isme available hote hain.
+
+2. **EDB Postgres Enterprise Manager (PEM)**:
+   - **Monitoring and Management** tool hai jo PostgreSQL servers ko manage karta hai.
+   - Aap **performance**, **availability**, **alerts**, aur **configuration management** track kar sakte hain.
+
+3. **EDB Postgres Replication Server**:
+   - **Replication** aur **high availability** features provide karta hai.
+   - **Streaming replication** aur **logical replication** ko manage karne ke liye use hota hai.
+
+4. **EDB Backup and Recovery Tool**:
+   - **Backup and recovery** processes ko automate karta hai.
+   - Aap **full backups**, **incremental backups**, aur **point-in-time recovery** kar sakte hain.
+
+5. **EDB PgBouncer**:
+   - **Connection pooling** tool hai jo PostgreSQL ke connections ko manage karta hai.
+   - Aapke database ke load ko reduce karne mein help karta hai.
+
+6. **EDB Pgpool**:
+   - **Connection pooling**, **load balancing**, aur **replication** ke liye use hota hai.
+   - Ye PostgreSQL ko **scalable aur fault-tolerant** banata hai.
+
+7. **EDB Failover Manager**:
+   - **Automatic failover** aur **replication management** tool hai.
+   - High availability ke liye, agar master server fail ho jata hai, toh automatically replica ko promote kar leta hai.
+
+8. **EDB Migration Toolkit**:
+   - **Migration** tools jo Oracle se PostgreSQL mein data aur schema migrate karne mein help karte hain.
+   - Ye Oracle databases ko **PostgreSQL** mein migrate karne ke liye **schema conversion** aur **data transfer** tools provide karta hai.
+
+9. **EDB Postgres for Kubernetes Operator**:
+   - Kubernetes ke environment mein **PostgreSQL** ko **deploy** aur **manage** karne ke liye operator tool hai.
+   - **Automated database deployments** aur **scaling** ke liye use hota hai.
+
+10. **EDB Postgres Extended Server**:
+   - Ye tool PostgreSQL ko **Oracle-compatible** banata hai, jisme additional extensions aur optimizations hote hain.
+   - Isse aap PostgreSQL ke core features ko **enhance** kar sakte hain.
+
+11. **EDB Slony**:
+   - Ye tool **master-slave replication** aur **asynchronous replication** ke liye use hota hai.
+   - Aap replication setup kar sakte hain PostgreSQL ke clusters mein.
+
+12. **EDB Postgres Distributed**:
+   - Ye tool aapko distributed PostgreSQL clusters banane mein help karta hai.
+   - Large-scale distributed databases ko efficiently manage karne ke liye use hota hai.
+
+13. **EDB High Availability Routing for Postgres**:
+   - **High availability** routing setup karta hai PostgreSQL clusters ke liye.
+   - Ye tool **load balancing** aur **automatic failover** ko manage karta hai.
+
+14. **EDB .NET Connector**:
+   - **PostgreSQL aur .NET** ke beech connectivity ke liye use hota hai.
+   - Ye **ADO.NET** interface ko support karta hai.
+
+15. **EDB JDBC Connector**:
+   - **PostgreSQL ko Java applications se connect karne ke liye** JDBC driver hai.
+   - Java-based applications ko PostgreSQL se integrate karne ke liye use hota hai.
+
+16. **EDB ODBC Connector**:
+   - **ODBC** (Open Database Connectivity) interface provide karta hai.
+   - Aap isse PostgreSQL ko different ODBC-compliant applications ke saath integrate kar sakte hain.
+
+17. **EDB StackBuilder Plus**:
+   - **PostgreSQL** aur **EDB tools** ke different stack ko manage karne ke liye use hota hai.
+   - Aap tools ko easily download aur install kar sakte hain, jaise extensions aur utilities.
+
+18. **EDB Postgres Workload Reports (PWR)**:
+   - **Workload analysis** aur **performance reporting** tool hai.
+   - Ye aapko PostgreSQL servers ke workload ko analyze karne mein help karta hai.
+
+---
+
+### **Backup Types** (EDB Postgres mein):
+1. **Full Backup**:
+   - **Complete database backup** hota hai jisme poore database ka snapshot liya jata hai.
+   
+2. **Incremental Backup**:
+   - Pehle ke backup ke baad jo bhi changes huye hain, unko backup karta hai. Space aur time save hota hai.
+
+3. **Point-in-time Recovery (PITR)**:
+   - Ye feature aapko ek specific point of time tak database ko recover karne ka option deta hai.
+
+4. **Consistent Backup**:
+   - Jab database stable state mein ho, tab backup liya jata hai.
+
+5. **Hot Backup**:
+   - Database active hone par bhi backup liya jata hai, without interrupting the normal operation.
+
+---
+
+### **Important Tools for Day-to-Day PostgreSQL Management**:
+1. **pgAdmin**: PostgreSQL ka GUI management tool hai jisme aap database, tables, users, queries ko manage kar sakte hain.
+2. **psql**: PostgreSQL ka command-line tool hai jisme aap queries execute kar sakte hain aur database ko manage kar sakte hain.
+3. **EDB Postgres Enterprise Manager (PEM)**: Aapko **server health**, **performance tuning**, aur **security monitoring** tools milte hain.
+4. **Backup & Restore Tools**: 
+   - **pg_dump** aur **pg_restore** ka use aap data ko export/import karne ke liye kar sakte hain.
+   - **EDB Backup Tool** advanced backup aur recovery processes ko automate karta hai.
+
+### **Conclusion:**
+Ye tools aapko PostgreSQL ko manage karne ke liye advanced functionalities provide karte hain. Aap in tools ka use **commercial purposes** ke liye kar sakte hain agar aapne **license** purchase kiya ho, otherwise **free version** ko **personal aur non-commercial** purposes ke liye use kar sakte hain.
+
 ---
