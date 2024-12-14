@@ -4,9 +4,11 @@
 2. sudo su - postgres psql
 3. sudo -u postgres psql
 
+---
 4. create databse "your databse name";
 5. ALTER USER postgres WITH PASSWORD 'admin@123';
 6. create USER "yourname" WITH PASSWORD 'admin@123';
+---
 
 7. \l - check database
 8. \du - Check user
