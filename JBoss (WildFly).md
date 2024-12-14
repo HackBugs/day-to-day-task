@@ -19,6 +19,10 @@ unzip example.zip -d example
    ```bash
    sudo yum install java-11-openjdk-devel
    ```
+- After this
+   ```
+   sudo alternatives --config java
+   ```
 
    Java version confirm karein:
    ```bash
