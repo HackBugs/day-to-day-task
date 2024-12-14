@@ -263,4 +263,201 @@
    rsync -a /var/lib/postgresql/<version>/main /backup/
    ```
 
+<hr>
+
+> ## EDB (EnterpriseDB) ke tools aur utilities PostgreSQL ke advanced features aur enterprise-level use cases ke liye design kiye gaye hain. Ye tools PostgreSQL environment ko zyada scalable, secure, aur enterprise-grade banate hain. Niche har tool ka use aur basic overview diya gaya hai jo aapko samajhne me help karega. 
+
+---
+
+### **1. EDB Backup and Recovery Tool**  
+- **Use:** Backup aur recovery tasks automate karne ke liye.
+- **Command/Access:**  
+  - Full backup create karne ke liye:
+    ```bash
+    edb-bart backup --backup-type=full --cluster=<cluster-name>
+    ```
+  - Recovery karne ke liye:
+    ```bash
+    edb-bart restore --cluster=<cluster-name> --timestamp=<backup-time>
+    ```
+- **Path:** Usually part of `EDB BART` installation (`/opt/edb/bart/`).
+
+---
+
+### **2. EDB Failover Manager (EFM)**  
+- **Use:** Automatic failover manage karta hai jab primary database unavailable hota hai.
+- **Commands:**  
+  - Cluster status check:
+    ```bash
+    efm cluster-status
+    ```
+  - Primary promote karna:
+    ```bash
+    efm promote --node <node-id>
+    ```
+- **Path:** `/etc/edb/efm-<version>` configuration file location hota hai.
+
+---
+
+### **3. EDB LDAP Sync**  
+- **Use:** LDAP directory aur PostgreSQL ke users ke beech synchronization ke liye.
+- **Commands:**  
+  - Configuration sync command:
+    ```bash
+    edb-ldap-sync --config /path/to/config.yaml
+    ```
+
+---
+
+### **4. EDB LiveCompare**  
+- **Use:** Database comparison aur schema migration tasks ke liye.  
+- **How to Use:** Graphical tool hai, graphical interface se manage hota hai.
+
+---
+
+### **5. EDB Migration Toolkit (EDB MTK)**  
+- **Use:** Oracle, MySQL, aur SQL Server se PostgreSQL me migrate karne ke liye.  
+- **Commands:**  
+  - Migration start:
+    ```bash
+    migrationtoolkit -sourcedbtype oracle -targetdbtype postgres -host <host> -port <port> -u <user>
+    ```
+
+---
+
+### **6. EDB Postgres Enterprise Manager (PEM)**  
+- **Use:** PostgreSQL aur EDB database ka monitoring aur management.  
+- **Access:** Web interface ke through access hota hai. Default URL: `http://<server-ip>:8080/pem`.
+
+---
+
+### **7. EDB Postgres Extended Server**  
+- **Use:** PostgreSQL ka enterprise version with additional security aur performance features.
+- **Installation Path:** `/usr/edb/epas-<version>`.
+
+---
+
+### **8. EDB Postgres for Kubernetes Operator**  
+- **Use:** PostgreSQL clusters ko Kubernetes me deploy aur manage karne ke liye.
+- **Commands:**  
+  - Cluster create:
+    ```yaml
+    kubectl apply -f postgres-cluster.yaml
+    ```
+  - Cluster status:
+    ```bash
+    kubectl get pods -n <namespace>
+    ```
+
+---
+
+### **9. EDB Replication Server**  
+- **Use:** Master-slave aur multi-master replication setup karne ke liye.
+- **Commands:**  
+  - Configuration create:
+    ```bash
+    edb-rep create config
+    ```
+  - Start replication:
+    ```bash
+    edb-rep start
+    ```
+
+---
+
+### **10. EDB Postgres Advanced Server**  
+- **Use:** PostgreSQL ka enhanced version for Oracle compatibility.  
+- **Features:** Same commands as PostgreSQL, but Oracle-like features (e.g., EDB*Plus).
+
+---
+
+### **11. Postgres Advanced Server Container Image**  
+- **Use:** Docker containers me Postgres Advanced Server deploy karna.
+- **Command:**  
+  ```bash
+  docker run -d -p 5432:5432 edb/epas:<version>
+  ```
+
+---
+
+### **12. EDB PgBouncer**  
+- **Use:** Lightweight connection pooling for PostgreSQL.
+- **Configuration File Path:** `/etc/pgbouncer/pgbouncer.ini`.
+
+---
+
+### **13. EDB Pgpool**  
+- **Use:** Load balancing aur connection pooling for PostgreSQL.  
+- **Commands:**  
+  - Start:
+    ```bash
+    pgpool -n
+    ```
+  - Configuration: `/etc/pgpool/pgpool.conf`.
+
+---
+
+### **14. EDB Language Pack**  
+- **Use:** PL/Java, PL/Python, aur other languages ke liye support add karta hai.
+- **Path:** Installed at `/usr/edb/languagepack/`.
+
+---
+
+### **15. EDB Slony**  
+- **Use:** Master-slave replication for PostgreSQL.
+- **Commands:**  
+  - Node add:
+    ```bash
+    slonik <config-file>
+    ```
+
+---
+
+### **16. EDB*Plus**  
+- **Use:** Oracle-like command-line tool for PostgreSQL.  
+- **Command:**  
+  ```bash
+  edb-plus
+  ```
+
+---
+
+### **17. EDB .NET Connector**  
+- **Use:** .NET applications ke liye PostgreSQL connectivity.
+
+---
+
+### **18. EDB JDBC Connector**  
+- **Use:** Java applications ke liye PostgreSQL connectivity.
+
+---
+
+### **19. EDB ODBC Connector**  
+- **Use:** ODBC-compliant applications ke liye PostgreSQL connectivity.
+
+---
+
+### **20. EDB Postgres Workload Reports (PWR)**  
+- **Use:** Database performance analysis reports generate karta hai.
+
+---
+
+### **21. EDB OCL Connector**  
+- **Use:** Open Client Library for custom application integration.
+
+---
+
+### **22. EDB StackBuilder Plus**  
+- **Use:** Add-ons aur plugins install karne ke liye.
+
+---
+
+### **23. EDB Postgres Distributed**  
+- **Use:** Multi-node distributed PostgreSQL system.
+
+---
+
+### **24. EDB High Availability Routing for Postgres**  
+- **Use:** Automatic failover aur high-availability routing ke liye.
+
 ---
