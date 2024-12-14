@@ -1,6 +1,10 @@
 > ## Aapke LAN (Local Area Network) me jitne devices connected hain, unka IP address ek saath dekhne ke liye aapko network scanning tools ya commands ka use karna hoga. Niche steps diye gaye hain jo aapko help karenge:
 
 ---
+## Install RPM pkg
+```
+sudo rpm -ivh jdk-17_linux-x64_bin.rpm
+```
 
 ### **Option 1: `arp -a` Command Ka Use Karein (Windows/Linux/Ubuntu)**
 1. **Command Run Karein**:  
