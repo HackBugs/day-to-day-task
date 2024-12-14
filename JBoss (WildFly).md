@@ -6,7 +6,11 @@
 unzip example.zip -d example
 ```
 
-- set Environment variables - sudo vim /etc/profile
+- Set Environment variables - `sudo vim /etc/profile` and `source ~/.bashrc`
+```
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+export PATH=$JAVA_HOME/bin:$PATH
+```
 
 <hr>
 
