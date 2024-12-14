@@ -16,6 +16,7 @@
 3. MobaXterm 
 4. FileZilla
 5. Putty
+6. IP Messenger
 ```
 
 ## 1. DBeaver Tool 
