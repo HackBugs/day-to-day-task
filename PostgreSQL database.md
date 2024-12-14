@@ -14,6 +14,8 @@
 - \du - check database
 - \c - database name which you want to connect
 
+---
+
 - [Download](https://www.postgresql.org/)
 - [Download-2](https://www.postgresql.org/download/linux/redhat/)
 
