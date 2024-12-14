@@ -56,6 +56,6 @@ sudo /usr/pgsql-17/bin/postgresql-17-setup initdb
 sudo systemctl enable postgresql-17
 sudo systemctl start postgresql-17
 ```
-
+<hr>
 
 
