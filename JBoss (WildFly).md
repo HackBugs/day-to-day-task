@@ -6,6 +6,8 @@
 unzip example.zip -d example
 ```
 
+- set Environment variables - sudo vim /etc/profile
+
 <hr>
 
 # **JBoss** application server ko RHEL (Red Hat Enterprise Linux) par install aur configure karne ke liye niche diye gaye steps ko follow karein:
