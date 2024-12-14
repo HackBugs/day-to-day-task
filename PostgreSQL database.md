@@ -13,6 +13,13 @@
 ## connect to database cmd
 - \du - check database
 - \c - database name which you want to connect
+- \dt - check list of tables
+
+## create table
+- create table test123 (sno int, sname varchar(10));
+- \dt - check tables
+- \d+ - check table details
+- \q - exit to database 
 
 ---
 
