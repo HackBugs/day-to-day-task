@@ -15,6 +15,11 @@
 - [apt-dnf-yum.md](https://github.com/HackBugs/PostgreSQL-EDB-firewall-cmd.md/blob/main/Other%20Files/apt-dnf-yum.md)  
 - [pgAdmin Install.md](https://github.com/HackBugs/PostgreSQL-EDB-firewall-cmd.md/blob/main/Other%20Files/pgAdmin%20Install.md)
 
+---
+
+> ## Option 2: Postgres aur EDB Ek Saath
+- Dono install kar sakte ho agar alag ports use karo (e.g., Postgres port 5432 aur EDB port 5444).
+- Iska fayda hoga ki aap dono ka comparison aur testing kar sakte ho.
 
 <hr>
 
