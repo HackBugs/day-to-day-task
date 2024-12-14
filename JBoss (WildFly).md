@@ -10,6 +10,9 @@ unzip example.zip -d example
 ```
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
+
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-11.0.25.0.9-2.el8.x86_64/"
+export PATH=$PATH:$JAVA_HOME/bin
 ```
 
 <hr>
