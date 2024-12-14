@@ -3,7 +3,7 @@
 [Download jboss](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform)
 
 ```
-unzip yourfile.zip -d ${yourfile%.zip}
+unzip example.zip -d example
 ```
 
 <hr>
