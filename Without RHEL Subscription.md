@@ -6,6 +6,10 @@ Yeh problem solve karne ke liye aapko RHEL system ko subscription manager ke thr
 
 ### **Option 1: RHEL Subscription Register Karo**
 
+   ```
+   sudo subscription-manager register
+   ```
+
 1. **Subscription Manager Register Karo**:
    ```bash
    sudo subscription-manager register --username=<your-Red-Hat-username> --password=<your-Red-Hat-password>
