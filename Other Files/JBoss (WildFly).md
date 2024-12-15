@@ -1,5 +1,58 @@
 
 
+1. Create directory
+ ```
+ mkdir -p /opt/jboss
+ ```
+2. Download this
+ ```
+ jdk1.8.0_144
+ jdk-8u144-linux-x64.tar.gz
+ jboss-eap-7.0.0-installer.jar
+ ```
+3. Copy this file on this location
+ ```
+ cp jdk-8u144-linux-x64.tar.gz /opt/jboss/
+ cp jboss-eap-7.0.0-installer.jar /opt/jboss/
+ ```
+4. Set Java Path
+ ```
+ vi ~/.bash_profile
+ ```
+ ```
+ #!/bin/bash
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi
+
+# Set the JAVA_HOME environment variable
+export JAVA_HOME=/opt/redhat/jdk1.8.0_144
+
+# Update the PATH environment variable
+export PATH=$JAVA_HOME/bin:$PATH:$HOME/bin
+
+export PATH
+```
+5. execute file
+```
+source ~/.bash_profile
+```
+6. check java - version
+```
+java -version
+```
+7. execute installer use this cmd java -jar
+```
+java -jar jboss-eap-7.0.0-installer.jar
+```
+8. during installation save script file for silent install - and than go on jbos folder and run
+```
+./standalone.sh
+```
+
+
 - [Download jboss](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform)
 - [Doc Jboss Installtion](https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html/getting_started_guide/sect-download_and_install_jboss_eap_using_the_graphical_installation_program#Run_the_JBoss_EAP_Installation_Program)
 
