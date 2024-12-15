@@ -1,3 +1,4 @@
+```
 #!/bin/bash
 
 # Print message for each step
@@ -71,3 +72,4 @@ sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
 sudo firewall-cmd --reload
 
 echo "WildFly (JBoss) installation and setup complete!"
+```
