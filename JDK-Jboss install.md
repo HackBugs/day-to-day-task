@@ -145,3 +145,113 @@ WildFly ka latest stable version download karna recommended hai.
    ```
 
 ---
+
+<hr>
+
+> # Aapne WildFly aur JDK dono download kar liye hain. Ab inhe configure karke aap server setup kar sakte hain. Chaliye step-by-step process dekhte hain:
+
+---
+
+### **1. JDK Install and Configure**
+#### **Step 1. JDK Extract karna**
+1. Pehle downloaded file ko `/opt/` directory me move karein:
+   ```bash
+   sudo mv jdk-23_linux-x64_bin.tar.gz /opt/
+   ```
+2. Extract karein:
+   ```bash
+   cd /opt/
+   sudo tar -xvzf jdk-23_linux-x64_bin.tar.gz
+   ```
+3. Directory rename karein for simplicity:
+   ```bash
+   sudo mv jdk-23 jdk
+   ```
+
+#### **Step 2. Java Environment Variable Configure Karna**
+1. Environment variable set karein:
+   ```bash
+   sudo nano /etc/profile
+   ```
+2. Is file ke end me ye lines add karein:
+   ```bash
+   export JAVA_HOME=/opt/jdk
+   export PATH=$JAVA_HOME/bin:$PATH
+   ```
+3. File save karke close karein, fir changes apply karein:
+   ```bash
+   source /etc/profile
+   ```
+4. Java verify karein:
+   ```bash
+   java -version
+   ```
+   Agar aapko Java version show ho raha hai (e.g., `jdk-23`), to Java successfully configure ho gaya hai.
+
+---
+
+### **2. WildFly Install and Configure**
+#### **Step 1. WildFly Extract Karna**
+1. WildFly ZIP file ko `/opt/` me move karein:
+   ```bash
+   sudo mv wildfly-35.0.0.Beta1.zip /opt/
+   ```
+2. Extract karein:
+   ```bash
+   cd /opt/
+   sudo unzip wildfly-35.0.0.Beta1.zip
+   ```
+3. Directory rename karein for simplicity:
+   ```bash
+   sudo mv wildfly-35.0.0.Beta1 wildfly
+   ```
+
+#### **Step 2. WildFly Server Start Karna**
+1. WildFly ke `bin` directory me jayein aur standalone server start karein:
+   ```bash
+   cd /opt/wildfly/bin
+   ./standalone.sh
+   ```
+   - Ye command WildFly ko default HTTP port `8080` par start karegi.
+   - Terminal me log dikhenge jo server ke successfully start hone ka indication denge.
+
+2. Browser me test karein:
+   - URL: `http://<your-server-ip>:8080`  
+   Agar default WildFly welcome page dikh raha hai, to setup sahi se ho gaya hai.
+
+---
+
+### **3. WildFly Admin User Setup**
+Agar aapko admin console access karna hai (URL: `http://<your-server-ip>:9990`), to ek admin user banayein:
+1. Add user script run karein:
+   ```bash
+   cd /opt/wildfly/bin
+   ./add-user.sh
+   ```
+2. Instructions follow karke ek admin user create karein:
+   - User type: `Management User`
+   - Username: apna desired username daalein
+   - Password: apna password set karein
+3. Fir `http://<your-server-ip>:9990` par jaake admin credentials se login karein.
+
+---
+
+### **4. WildFly Service Setup (Optional)**
+Agar aap chahte hain ki WildFly boot ke saath start ho, to systemd service configure karein:
+1. WildFly service file ko copy karein:
+   ```bash
+   sudo cp /opt/wildfly/docs/contrib/scripts/systemd/wildfly.service /etc/systemd/system/
+   ```
+2. Service ko enable aur start karein:
+   ```bash
+   sudo systemctl daemon-reload
+   sudo systemctl enable wildfly
+   sudo systemctl start wildfly
+   ```
+
+---
+
+### **Quick Summary**
+- JDK install ho gaya hai aur environment variables set ho chuki hain.
+- WildFly extract karke run kar diya hai.
+- Admin user bana ke management console access kar sakte hain.
