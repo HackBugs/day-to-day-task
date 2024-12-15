@@ -253,3 +253,50 @@ Agar aap chahte hain ki WildFly boot ke saath start ho, to systemd service confi
 - JDK install ho gaya hai aur environment variables set ho chuki hain.
 - WildFly extract karke run kar diya hai.
 - Admin user bana ke management console access kar sakte hain.
+
+<hr>
+
+> # Agar aap **JBoss** (WildFly) ko **JAR** file ke form me install karna chahte hain, to ye steps follow kar sakte hain. WildFly ka installation process JAR ke through bhi kiya jaa sakta hai, lekin pehle aapko WildFly ko download karna hoga.
+
+### **JBoss (WildFly) ke JAR Installation Steps**
+
+1. **WildFly JAR Download Karna**:
+   WildFly ke **JAR** versions ko directly download karna mushkil hota hai, kyunki official website pe zyada tar compressed archives (zip) aur RPM packages available hote hain. Lekin agar aap specific JAR file chahte hain to WildFly ka download page ya maven repository se uska JAR version dhundh sakte hain.
+
+   WildFly ke latest releases aur JAR files aapko yahan mil sakti hain:  
+   - [WildFly Download Page](https://www.wildfly.org/downloads/)
+
+2. **WildFly JAR Version Maven Repository se Download**:
+   Agar aapko specific JAR file chahiye, to Maven repository se download kar sakte hain. Example:
+   - [Maven Central WildFly Artifact](https://search.maven.org/artifact/org.wildfly/wildfly-core)
+
+3. **JAR File Install Karna**:
+   Agar aap WildFly ko **JAR** ke form me use karna chahte hain to aapko WildFly ka **core** library JAR file chahiye hoti hai.
+
+   Example Maven dependency for WildFly Core:
+   ```xml
+   <dependency>
+       <groupId>org.wildfly</groupId>
+       <artifactId>wildfly-core</artifactId>
+       <version>23.0.0.Final</version>
+   </dependency>
+   ```
+
+4. **JAR Ko Run Karna**:
+   Agar aapne WildFly ko JAR ke form me install kiya hai, to isko terminal ya command line se run karna hoga. WildFly ko JAR file se run karne ka basic command ye ho sakta hai:
+   ```bash
+   java -jar wildfly-core-<version>.jar
+   ```
+
+   JBoss WildFly ko JAR ke form me normally directly use nahi kiya jata, kyunki ye zyada tar server ke tarah configure hota hai. Isliye zip ya RPM package ka use karna convenient hota hai.
+
+5. **JAR File ka Configuration**:
+   Agar aap WildFly ko JAR file ke through customize karna chahte hain, to aapko configuration files (e.g., `standalone.xml`) edit karne padenge jo WildFly ke `standalone/configuration/` folder mein milti hain.
+
+### **Important Notes**:
+- WildFly ko JAR ke through direct run karna thoda challenging ho sakta hai, kyunki typical WildFly setup zip files aur RPM packages ke through hota hai, jo server aur management tools ke sath pre-configured hote hain.
+- JAR file se WildFly ko configure karte waqt aapko apne server ports, database connections aur deployment configuration manually set karne padenge.
+
+---
+
+Agar aapko **JAR** file se WildFly ka exact installation steps chahiye ya koi specific configuration me help chahiye ho, to zarur bataye! 😊
