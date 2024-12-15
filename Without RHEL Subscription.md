@@ -172,4 +172,106 @@ Agar RHEL ke subscription-related issues solve nahi hote, to CentOS Stream ya Ub
 ### **References**
 For detailed instructions, refer to the [official Red Hat documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html-single/managing_software/).
 
---- 
+<hr>
+
+> # The repeated errors indicate that your system is still pointing to outdated CentOS 8 or CentOS Stream repositories. Here's how to resolve this issue effectively:
+
+---
+
+### **1. Update Repository URLs to Vault**
+Since CentOS 8 and CentOS Stream URLs have changed, you need to redirect them to the **CentOS Vault** for deprecated versions.
+
+#### Update Repository Configuration
+1. **Edit repository files:**
+   ```bash
+   sudo nano /etc/yum.repos.d/CentOS-Base.repo
+   ```
+
+2. **Replace repository URLs:**
+   Replace all URLs in the file with the CentOS Vault URL. For example:
+   ```ini
+   [BaseOS]
+   name=CentOS-8 - BaseOS
+   baseurl=http://vault.centos.org/8.5.2111/BaseOS/x86_64/os/
+   gpgcheck=1
+   enabled=1
+   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+   ```
+
+   Perform the same replacement for `AppStream`, `extras`, and other repositories.
+
+3. **Save and exit the file.**
+
+#### Clean Cache and Retry
+```bash
+sudo dnf clean all
+sudo dnf update
+```
+
+This should resolve the metadata errors.
+
+---
+
+### **2. Upgrade to CentOS Stream (Alternative Solution)**
+
+If you are trying to switch to CentOS Stream but encountering repository issues, ensure your repository points to the correct CentOS Stream URL.
+
+1. **Update to CentOS Stream URLs:**
+   Modify your repository files to use the CentOS Stream Vault URL:
+   ```bash
+   sudo nano /etc/yum.repos.d/CentOS-Stream.repo
+   ```
+
+   Example:
+   ```ini
+   [BaseOS]
+   name=CentOS Stream - BaseOS
+   baseurl=http://vault.centos.org/8-stream/BaseOS/x86_64/os/
+   gpgcheck=1
+   enabled=1
+   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+   ```
+
+2. **Run system synchronization:**
+   ```bash
+   sudo dnf distro-sync
+   ```
+
+---
+
+### **3. Consider Migrating to Rocky Linux or AlmaLinux**
+If you’re still having issues, CentOS alternatives like **Rocky Linux** or **AlmaLinux** are actively maintained and can be directly installed.
+
+#### Migration Steps
+1. Install the migration tool:
+   ```bash
+   sudo dnf install -y https://dl.rockylinux.org/pub/rocky/rocky-tools-migration/latest/rocky-migrate.el8.noarch.rpm
+   ```
+
+2. Perform the migration:
+   ```bash
+   sudo rocky-migrate
+   ```
+
+This will transition your system to Rocky Linux, a fully compatible CentOS replacement.
+
+---
+
+### **4. Install Java Manually**
+If the primary goal is to install Java, bypass the repository issue by downloading Java directly from OpenJDK or Oracle:
+
+1. **Download the JDK:**
+   - [OpenJDK](https://jdk.java.net/)
+   - [Oracle JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
+
+2. **Install Java:**
+   Follow the installation instructions specific to the downloaded package.
+
+---
+
+### Final Notes
+- **CentOS 8 EOL Issue**: Vault mirrors are a temporary workaround. For production systems, switch to Rocky Linux, AlmaLinux, or CentOS Stream.
+- **Error Fix**: Redirect repository URLs to the appropriate vault URLs and clean the cache.
+
+<hr>
+
