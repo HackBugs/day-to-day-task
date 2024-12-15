@@ -1,3 +1,6 @@
+
+- [CentOS Repo Data XML](https://buildlogs.centos.org/centos/7/os/x86_64-latest/repodata/)
+
 > ## Aapke system par `java-1.8.0-openjdk-devel` package install nahi ho raha hai kyunki RHEL (Red Hat Enterprise Linux) subscription activated nahi hai. RHEL ka yum repository subscription ke bina kaam nahi karega.
 
 Yeh problem solve karne ke liye aapko RHEL system ko subscription manager ke through register karna hoga ya alternative method use karna hoga. Dono tarike niche diye gaye hain:
