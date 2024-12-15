@@ -56,7 +56,6 @@ java -jar jboss-eap-7.0.0-installer.jar
 - [Download jboss](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform)
 - [Doc Jboss Installtion](https://docs.redhat.com/en/documentation/red_hat_jboss_enterprise_application_platform/6.4/html/getting_started_guide/sect-download_and_install_jboss_eap_using_the_graphical_installation_program#Run_the_JBoss_EAP_Installation_Program)
 
-<!---
 
 ```
 unzip example.zip -d example
@@ -353,4 +352,3 @@ Agar aap firewall ka use karte hain, to FirewallD ko start aur configure karein.
 
 <hr>
 
---->
