@@ -144,8 +144,6 @@ WildFly ka latest stable version download karna recommended hai.
    sudo systemctl enable wildfly
    ```
 
----
-
 <hr>
 
 > # Aapne WildFly aur JDK dono download kar liye hain. Ab inhe configure karke aap server setup kar sakte hain. Chaliye step-by-step process dekhte hain:
