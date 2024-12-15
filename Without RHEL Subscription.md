@@ -1,5 +1,5 @@
 
-> ## Aapke system mein "CentOS-BaseOS" repository ka URL abhi bhi outdated hai, jo ki CentOS-8 ke official repositories ke shutdown hone ke kaaran kaam nahi kar raha. Aapko repositories ko manually correct karna hoga ya CentOS Stream ya Rocky Linux par migrate karna hoga. 
+> # Aapke system mein "CentOS-BaseOS" repository ka URL abhi bhi outdated hai, jo ki CentOS-8 ke official repositories ke shutdown hone ke kaaran kaam nahi kar raha. Aapko repositories ko manually correct karna hoga ya CentOS Stream ya Rocky Linux par migrate karna hoga. 
 
 ---
 
@@ -100,7 +100,59 @@ Post-repository update ke baad, ye commands run karke confirm karo ki repositori
    ```bash
    sudo dnf search java
    ```
+<hr>
 
+> # Aapke system mein CentOS repositories ab kaam kar rahe hain, lekin ek naya issue hai:
+
+`/etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial` key file nahi mil raha, jo ki GPG verification ke liye zaroori hai.
+
+Ye issue solve karne ke liye GPG key ko manually download aur install karna hoga.
+
+---
+
+### **Solution: Import GPG Key**
+
+1. **Manually Download the GPG Key:**  
+   Ye command chalakar CentOS official GPG key ko download karo:  
+   ```bash
+   sudo curl -o /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Official
+   ```
+
+2. **Verify the GPG Key Exists:**  
+   Ensure karo ki key sahi location pe hai:  
+   ```bash
+   ls -l /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+   ```
+
+3. **Import the GPG Key:**  
+   Ab key ko dnf mein import karo:  
+   ```bash
+   sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial
+   ```
+
+4. **Retry the Update Command:**  
+   Update command dobara run karo aur dekho:  
+   ```bash
+   sudo dnf update
+   ```
+
+---
+
+### **Optional Cleanup**
+Agar pehle cached packages rakhe gaye hain aur transaction successful nahi hui thi, to unhe delete kar do:  
+```bash
+sudo dnf clean packages
+```
+
+Phir se update try karo:  
+```bash
+sudo dnf update
+```
+
+---
+
+### **Expected Outcome**
+> Ab system bina kisi issue ke update hona chahiye. Agar phir bhi koi error mile, to exact error output share karo.
 
 <hr>
 
