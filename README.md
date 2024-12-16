@@ -50,6 +50,14 @@ sudo systemctl list-units --type=service --state=running
 systemctl start httpd
 ```
 
+### Important locations
+```
+- Deploy EAR file - /opt/jboss/wildfly-34.0.1.Final/standalone/deployments/
+- Eanter IP Address of you Server Machince - /opt/jboss/wildfly-34.0.1.Final/standalone/configuration/standalone.xml
+- Start Wildfly Jboss - /opt/jboss/wildfly-34.0.1.Final/bin/add-user.sh
+- Start Wildfly Jboss - /opt/jboss/wildfly-34.0.1.Final/bin/standalone.sh
+```
+
 <hr>
 
 > ## All file hyperlinks
