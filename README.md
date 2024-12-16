@@ -4,6 +4,18 @@ jdk-23_linux-x64_bin.tar.gz
 wildfly-34.0.1.Final.tar.gz
 ```
 
+### Jboss run in Background
+```
+./standalone.sh &
+
+Check  and kill
+ps aux | grep standalone.sh
+pgrep -f standalone.sh
+kill -9 <PID>
+
+screen -r jboss
+```
+
 ### Commands 
 ```
 tar -zxvf
