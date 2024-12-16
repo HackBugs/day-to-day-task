@@ -1,3 +1,9 @@
+### Downlaod 
+```
+jdk-23_linux-x64_bin.tar.gz
+wildfly-34.0.1.Final.tar.gz
+```
+
 ### Commands 
 ```
 tar -zxvf
@@ -26,6 +32,7 @@ sudo systemctl list-units --type=service --state=running
 ```
 systemctl start httpd
 ```
+
 <hr>
 
 > ## All file hyperlinks
