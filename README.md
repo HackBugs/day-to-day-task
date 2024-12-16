@@ -2,6 +2,7 @@
 ```
 vim /etc/profile
 vim ~/.bashrc
+source /etc/profile
 ```
 
 <hr>
