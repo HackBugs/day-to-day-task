@@ -18,6 +18,10 @@ export JBOSS_HOME=/opt/jboss/wildfly-34.0.1.Final
 export PATH=$JBOSS_HOME/bin:$PATH
 ```
 
+```
+sudo systemctl list-units --type=service --state=running
+```
+
 <hr>
 
 > ## All file hyperlinks
