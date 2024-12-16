@@ -35,5 +35,3 @@ sudo systemctl start iptables && sudo systemctl enable iptables
 sudo systemctl status iptables
 ```
 
-=
-
