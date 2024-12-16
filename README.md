@@ -1,3 +1,11 @@
+
+```
+vim /etc/profile
+vim ~/.bashrc
+```
+
+<hr>
+
 > ## All file hyperlinks
 
 - [Commands.md](https://github.com/HackBugs/PostgreSQL-EDB-firewall-cmd.md/blob/main/Other%20Files/Commands.md)  
