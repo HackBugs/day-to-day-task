@@ -1,5 +1,9 @@
 
 ```
+tar -zxvf
+```
+
+```
 vim /etc/profile
 vim ~/.bashrc
 
@@ -7,7 +11,11 @@ source /etc/profile
 source ~/.bashrc
 ```
 ```
-tar -zxvf
+export JAVA_HOME=/opt/jdk-23.0.1
+export PATH=$JAVA_HOME/bin:$PATH
+
+export JBOSS_HOME=/opt/jboss/wildfly-34.0.1.Final
+export PATH=$JBOSS_HOME/bin:$PATH
 ```
 
 <hr>
