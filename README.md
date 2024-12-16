@@ -1,3 +1,8 @@
+### find anything by name
+
+```
+sudo find / -name httpd
+```
 ### Downlaod 
 ```
 jdk-23_linux-x64_bin.tar.gz
