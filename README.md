@@ -6,6 +6,9 @@ vim ~/.bashrc
 source /etc/profile
 source ~/.bashrc
 ```
+```
+tar -zxvf
+```
 
 <hr>
 
