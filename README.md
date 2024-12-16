@@ -1,4 +1,4 @@
-
+### Commands 
 ```
 tar -zxvf
 ```
@@ -22,6 +22,10 @@ export PATH=$JBOSS_HOME/bin:$PATH
 sudo systemctl list-units --type=service --state=running
 ```
 
+### Start pgAdmin
+```
+systemctl start httpd
+```
 <hr>
 
 > ## All file hyperlinks
